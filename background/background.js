@@ -28,7 +28,7 @@ function keyWordsFilterSucceed(jobName) {
     "fullstack", "application", "java", "developer", "cloud"];
   //must NOT contain any of the words in the following list
   const exclusiveWords = ["clearance", "principal", "support", "test", "front end", "front-end",
-    "frontend", "devops", "staff", "citizenship"];
+    "frontend", "devops", "staff", "citizenship", "contract"];
 
   let lowerCaseJobName = jobName.toLowerCase();
   let result = false;
