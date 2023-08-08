@@ -49,9 +49,12 @@ async function scrapeJobDetails(card) {
   const jobInsight =
     document.querySelector(".jobs-unified-top-card__bullet")?.innerText || "";
 
-  const jobDescription = document.querySelector(
-    ".jobs-description-content__text"
-  ).innerText;
+  //I removed job description so that the page will be more concise
+
+  // const jobDescription = document.querySelector(
+  //   ".jobs-description-content__text"
+  // ).innerText;
+  const jobDescription = "...";
 
   const linkedinJobId = window.location.href
     .split("currentJobId=")[1]
@@ -98,7 +101,7 @@ async function scrapeLinkedInJobs() {
 
     await simulateRealScrollToEnd(cardsListElement, 500);
 
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 4000));
 
     const cards = document.querySelectorAll(".job-card-container");
 
