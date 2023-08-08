@@ -15,8 +15,6 @@ function sendProgressPercentage(progressPercentage) {
 
 function simulateRealScrollToEnd(element, duration) {
   const startScrollTop = element.scrollTop;
-  const endScrollTop = element.scrollHeight - element.clientHeight;
-
   const startTime = performance.now();
   const endTime = startTime + duration;
 
@@ -24,6 +22,7 @@ function simulateRealScrollToEnd(element, duration) {
     const currentTime = Math.min(timestamp, endTime);
     const elapsedTime = currentTime - startTime;
     const scrollFraction = elapsedTime / duration;
+    const endScrollTop = element.scrollHeight - element.clientHeight;
     const scrollTop =
       startScrollTop + (endScrollTop - startScrollTop) * scrollFraction;
 
@@ -99,9 +98,9 @@ async function scrapeLinkedInJobs() {
       ".jobs-search-results-list"
     );
 
-    await simulateRealScrollToEnd(cardsListElement, 500);
+    await simulateRealScrollToEnd(cardsListElement, 1000);
 
-    await new Promise((resolve) => setTimeout(resolve, 4000));
+    await new Promise((resolve) => setTimeout(resolve, 3000));
 
     const cards = document.querySelectorAll(".job-card-container");
 
