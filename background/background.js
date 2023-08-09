@@ -28,7 +28,9 @@ function keyWordsFilterSucceed(jobName) {
     "fullstack", "application", "java", "developer", "cloud"];
   //must NOT contain any of the words in the following list
   const exclusiveWords = ["clearance", "principal", "support", "test", "front end", "front-end",
-    "frontend", "devops", "staff", "citizenship", "contract"];
+    "frontend", "devops", "staff", "citizenship", "contract", "embedded", "manager", "hard ware", "hardware",
+    "director"];
+  const exclusiveCaseSensitiveWords = ["iOS"];
 
   let lowerCaseJobName = jobName.toLowerCase();
   let result = false;
@@ -47,6 +49,12 @@ function keyWordsFilterSucceed(jobName) {
 
   if (!result) {
     return false;
+  }
+
+  for (let index in exclusiveCaseSensitiveWords) {
+    if (jobName.includes(exclusiveCaseSensitiveWords[index])) {
+      return false;
+    }
   }
 
   for(let index in exclusiveWords) {
