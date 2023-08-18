@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .add([
               job.linkedinJobId,
               `<a href="${job.link}">${job.jobTitle}</a>`,
-              job.jobInsight,
-              job.jobDescription,
             ])
             .draw();
         });

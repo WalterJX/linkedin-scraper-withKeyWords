@@ -48,13 +48,9 @@ async function scrapeJobDetails(card) {
   const jobInsight =
     document.querySelector(".jobs-unified-top-card__bullet")?.innerText || "";
 
-  //I removed job description so that the page will be more concise
-
-  // const jobDescription = document.querySelector(
-  //   ".jobs-description-content__text"
-  // ).innerText;
-  const jobDescription = "...";
-
+  const jobDescription = document.querySelector(
+    ".jobs-description-content__text"
+  ).innerText;
   const linkedinJobId = window.location.href
     .split("currentJobId=")[1]
     .split("&")[0];
@@ -65,8 +61,6 @@ async function scrapeJobDetails(card) {
     linkedinJobId,
     link,
     jobTitle,
-    jobInsight,
-    jobDescription,
   };
 }
 
