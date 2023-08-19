@@ -51,6 +51,11 @@ async function scrapeJobDetails(card) {
   const jobDescription = document.querySelector(
     ".jobs-description-content__text"
   ).innerText;
+
+  const companyName = document.querySelector(
+      ".jobs-unified-top-card__primary-description a.app-aware-link"
+  ).innerText;
+
   const linkedinJobId = window.location.href
     .split("currentJobId=")[1]
     .split("&")[0];
@@ -61,6 +66,7 @@ async function scrapeJobDetails(card) {
     linkedinJobId,
     link,
     jobTitle,
+    companyName,
   };
 }
 

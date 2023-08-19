@@ -25,7 +25,7 @@ function jobIdExists(jobId, existingJobs) {
 function keyWordsFilterSucceed(jobName) {
   //must contain at least ONE word of the following list
   const mustHaveWords = ["software", "back end", "back-end", "backend", "full stack", "full-stack",
-    "fullstack", "application", "java", "developer", "cloud"];
+    "fullstack", "application", "java", "developer", "cloud", "platform"];
   //must NOT contain any of the words in the following list
   const exclusiveWords = ["clearance", "principal", "support", "test", "front end", "front-end",
     "frontend", "devops", "staff", "citizenship", "contract", "embedded", "manager", "hard ware", "hardware",

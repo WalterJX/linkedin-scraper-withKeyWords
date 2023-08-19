@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
           table.row
             .add([
               job.linkedinJobId,
+              job.companyName,
               `<a href="${job.link}">${job.jobTitle}</a>`,
             ])
             .draw();
