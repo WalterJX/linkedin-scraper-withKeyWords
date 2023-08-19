@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         jobs.forEach(function (job) {
           table.row
             .add([
+              '<input type="checkbox">', // Checkbox cell
               job.linkedinJobId,
               job.companyName,
               `<a href="${job.link}">${job.jobTitle}</a>`,
