@@ -58,3 +58,28 @@ document
       location.reload(); // Reload the page
     });
   });
+
+document
+    .getElementById("sendToLocalDbButton")
+    .addEventListener("click", function () {
+      chrome.storage.local.get('jobs', function (result) {
+        const existingJobs = result.jobs || [];
+
+        if (existingJobs.length > 0) {
+          fetch('http://localhost:8000/write-to-db/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(existingJobs)
+          })
+              .then(response => response.text())
+              .then(text => {
+                console.log('Server response:', text);
+              })
+              .catch(error => {
+                console.error('Error:', error);
+              });
+        }
+      });
+    });

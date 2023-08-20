@@ -67,6 +67,7 @@ async function scrapeJobDetails(card) {
     link,
     jobTitle,
     companyName,
+    jobDescription,
   };
 }
 

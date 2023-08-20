@@ -25,7 +25,7 @@ function jobIdExists(jobId, existingJobs) {
 function keyWordsFilterSucceed(jobName) {
   //must contain at least ONE word of the following list
   const mustHaveWords = ["software", "back end", "back-end", "backend", "full stack", "full-stack",
-    "fullstack", "application", "java", "developer", "cloud", "platform"];
+    "fullstack", "application", "java", "developer", "cloud", "platform", "tech", "technology"];
   //must NOT contain any of the words in the following list
   const exclusiveWords = ["clearance", "principal", "support", "test", "front end", "front-end",
     "frontend", "devops", "staff", "citizenship", "contract", "embedded", "manager", "hard ware", "hardware",
@@ -35,11 +35,11 @@ function keyWordsFilterSucceed(jobName) {
   let lowerCaseJobName = jobName.toLowerCase();
   let result = false;
 
-  console.log("job name: " + lowerCaseJobName);
+  // console.log("job name: " + lowerCaseJobName);
 
   for (let index in mustHaveWords) {
     if (lowerCaseJobName.includes(mustHaveWords[index])) {
-      console.log("include keyword: " + mustHaveWords[index]);
+      // console.log("include keyword: " + mustHaveWords[index]);
       result = true;
       break;
     }

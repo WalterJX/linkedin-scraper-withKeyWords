@@ -3,7 +3,7 @@
   "name": "LinkedIn Job Scraper",
   "version": "1.0",
   "description": "Scrape job details from LinkedIn",
-  "permissions": ["tabs", "storage"],
+  "permissions": ["tabs", "storage", "http://localhost:8000/"],
   "background": {
     "service_worker": "background/background.js",
     "type": "module"
@@ -22,5 +22,8 @@
     "16": "images/icon.png",
     "48": "images/icon.png",
     "128": "images/icon.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src http://localhost:8000;"
   }
 }
